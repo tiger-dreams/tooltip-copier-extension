@@ -75,13 +75,8 @@ document.addEventListener('keydown', function(event) {
         return;
     }
     
-    // Ctrl+C or Cmd+C
-    if ((event.ctrlKey || event.metaKey) && (event.key === 'c' || event.code === 'KeyC')) {
-        event.preventDefault();
-        copyToClipboard(currentTooltipText, 'Ctrl+C');
-    }
-    // 'c' key or 'ㅊ' (Korean keyboard)
-    else if ((event.key === 'c' || event.key === 'ㅊ' || event.code === 'KeyC') && !event.ctrlKey && !event.metaKey) {
+    // Only 'c' key or 'ㅊ' (Korean keyboard) without modifier keys
+    if ((event.key === 'c' || event.key === 'ㅊ' || event.code === 'KeyC') && !event.ctrlKey && !event.metaKey && !event.altKey && !event.shiftKey) {
         copyToClipboard(currentTooltipText, 'C/ㅊ key');
     }
 });
@@ -89,7 +84,7 @@ document.addEventListener('keydown', function(event) {
 function copyToClipboard(text, method) {
     navigator.clipboard.writeText(text).then(() => {
         showNotification(`Copied (${method}): ${text.substring(0, 30)}${text.length > 30 ? '...' : ''}`);
-    }).catch(err => {
+    }).catch(() => {
         showNotification('Copy failed!', true);
     });
 }

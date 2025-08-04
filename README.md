@@ -11,7 +11,7 @@ A lightweight Chrome extension that allows you to instantly copy tooltip text an
 - **Universal Compatibility**: Works on all websites and web applications
 - **Chart Library Support**: Optimized for Billboard.js, D3, Highcharts, and other popular charting libraries
 - **Smart Text Cleaning**: Automatically removes excessive whitespace and formats multi-line content
-- **Multiple Shortcuts**: Use `Ctrl+C` (`Cmd+C` on Mac) or simply press `C` for quick copying
+- **Simple Keyboard Shortcut**: Press `C` or `ㅊ` key for instant copying (no conflicts with regular copy operations)
 - **Multi-Language Support**: Supports both English and Korean keyboards (`C`/`ㅊ` keys)
 - **Visual Feedback**: Shows confirmation notifications when text is copied
 
@@ -30,8 +30,10 @@ A lightweight Chrome extension that allows you to instantly copy tooltip text an
 ## 📖 How to Use
 
 1. **Hover** over any element with a tooltip or text content
-2. **Press** `C` key or `Ctrl+C` (`Cmd+C` on Mac)  
+2. **Press** `C` key (or `ㅊ` on Korean keyboard)
 3. **Done!** The text is instantly copied to your clipboard
+
+> **Note**: This extension only uses single-key shortcuts (`C`/`ㅊ`) to avoid interfering with regular text selection and `Ctrl+C` copy operations.
 
 ### Supported Tooltip Types
 - HTML `title` attributes
